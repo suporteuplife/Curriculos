@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Modelos de Currículo - Up Life</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+    }
+
+    .card-title {
+      padding: 10px;
+      background: #ff6600;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Modelos de Currículo - Up Life</h1>
+  </header>
+
+  <div class="container" id="cardsContainer">
+    <!-- Os cards serão adicionados aqui via JS -->
+  </div>
+
+  <script>
+    const modelos = [
+      { id: 1, nome: "Modelo 1", imagem: "https://via.placeholder.com/300x400?text=Curriculo+1" },
+      { id: 2, nome: "Modelo 2", imagem: "https://via.placeholder.com/300x400?text=Curriculo+2" },
+      { id: 3, nome: "Modelo 3", imagem: "https://via.placeholder.com/300x400?text=Curriculo+3" }
+    ];
+
+    const container = document.getElementById("cardsContainer");
+
+    modelos.forEach(modelo => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.innerHTML = `
+        <img src="${modelo.imagem}" alt="${modelo.nome}">
+        <div class="card-title">${modelo.nome}</div>
+      `;
+      card.onclick = () => {
+        window.location.href = `detalhes.html?id=${modelo.id}`;
+      };
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>

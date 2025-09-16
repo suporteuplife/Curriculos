@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalhes do Currículo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background: #003366;
+      color: white;
+      padding: 20px;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    .curriculo-img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      cursor: zoom-in;
+      transition: transform 0.2s;
+    }
+
+    .curriculo-img:hover {
+      transform: scale(1.05);
+    }
+
+    h2 {
+      margin: 20px 0;
+      color: #003366;
+    }
+
+    .btn-whats {
+      display: inline-block;
+      padding: 12px 20px;
+      margin-top: 20px;
+      background: #25d366;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background 0.2s;
+    }
+
+    .btn-whats:hover {
+      background: #1ebe5a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Detalhes do Currículo</h1>
+  </header>
+
+  <div class="content">
+    <img id="curriculoImagem" class="curriculo-img" src="" alt="Currículo">
+    <h2>Gostou desse modelo? Solicite aqui!</h2>
+    <a id="whatsBtn" class="btn-whats" target="_blank">Escolher Modelo</a>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get("id");
+
+    const modelos = [
+      { id: 1, nome: "Modelo 1", imagem: "https://via.placeholder.com/600x800?text=Curriculo+1" },
+      { id: 2, nome: "Modelo 2", imagem: "https://via.placeholder.com/600x800?text=Curriculo+2" },
+      { id: 3, nome: "Modelo 3", imagem: "https://via.placeholder.com/600x800?text=Curriculo+3" }
+    ];
+
+    const modelo = modelos.find(m => m.id == id);
+
+    if(modelo) {
+      document.getElementById("curriculoImagem").src = modelo.imagem;
+      document.getElementById("curriculoImagem").alt = modelo.nome;
+
+      const whatsBtn = document.getElementById("whatsBtn");
+      const numeroWhats = "5541999016634"; 
+      const mensagem = `Quero o modelo ${modelo.nome}`;
+      whatsBtn.href = `https://wa.me/${numeroWhats}?text=${encodeURIComponent(mensagem)}`;
+    }
+  </script>
+</body>
+</html>
