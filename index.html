@@ -2,60 +2,80 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Modelos de Currículo - Up Life</title>
+  <title>Currículo - Up Life</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f5f5;
-      color: #333;
-    }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+    color: #333;
+  }
 
-    header {
-      background: #e96d07;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
+  header {
+    background: #e96d07;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
 
-    h1 {
-      margin: 0;
-      font-size: 30px;
-    }
+  h1 {
+    margin: 0;
+    font-size: 30px;
+  }
 
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    padding: 30px;
+  }
+
+  .card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+  }
+
+  .card img {
+    width: 100%;
+    display: block;
+  }
+
+  .card-title {
+    padding: 10px;
+    background: #ff6600;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /* Responsividade */
+  @media (max-width: 1024px) {
     .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 30px;
+      grid-template-columns: repeat(3, 1fr); 
     }
+  }
 
-    .card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.2s;
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: repeat(2, 1fr); 
     }
+  }
 
-    .card:hover {
-      transform: scale(1.03);
+  @media (max-width: 480px) {
+    .container {
+      grid-template-columns: 1fr; 
     }
+  }
+</style>
 
-    .card img {
-      width: 100%;
-      display: block;
-    }
-
-    .card-title {
-      padding: 10px;
-      background: #ff6600;
-      color: white;
-      text-align: center;
-      font-weight: bold;
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -68,12 +88,16 @@
 
   <script>
     const modelos = [
-      { id: 1, nome: "Modelo 1", imagem: "https://via.placeholder.com/300x400?text=Curriculo+1" },
-      { id: 2, nome: "Modelo 2", imagem: "https://via.placeholder.com/300x400?text=Curriculo+2" },
-      { id: 3, nome: "Modelo 3", imagem: "https://via.placeholder.com/300x400?text=Curriculo+3" },
-      { id: 4, nome: "Modelo 4", imagem: "https://via.placeholder.com/300x400?text=Curriculo+1" },
-      { id: 5, nome: "Modelo 5", imagem: "https://via.placeholder.com/300x400?text=Curriculo+2" },
-      { id: 6, nome: "Modelo 6", imagem: "https://via.placeholder.com/300x400?text=Curriculo+3" },
+      { id: 1, nome: "Modelo 1", imagem: "Blue and White Professional Corporate Resume.png" },
+      { id: 2, nome: "Modelo 2", imagem: "Curriculo 2.png" },
+      { id: 3, nome: "Modelo 3", imagem: "Currículo profissional engenheiro com foto moderno simples preto branco cinza.png" },
+      { id: 4, nome: "Modelo 4", imagem: "modelo bom.png" },
+      { id: 5, nome: "Modelo 5", imagem: "Currículo simples.png" },
+      { id: 6, nome: "Modelo 6", imagem: "White Minimalist Clean Marketing Manager Resume.png" },
+      { id: 7, nome: "Modelo 7", imagem: "White Simple Web Developer Resume.png" },
+      { id: 8, nome: "Modelo 8", imagem: "minimalista.png" },
+      { id: 9, nome: "Modelo 9", imagem: "modelo 2.png" },
+      { id: 10, nome: "Modelo 10", imagem: "modelo.png" },
     ];
 
     const container = document.getElementById("cardsContainer");
