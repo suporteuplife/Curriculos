@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Currículo - Up Life</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="Logo_Gota-removebg-preview (1).png">
   <style>
   body {
@@ -16,45 +17,49 @@
     background: #e96d07;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 15px;
   }
 
   h1 {
     margin: 0;
-    font-size: 30px;
+    font-size: clamp(20px, 5vw, 30px); /* diminui em telas menores */
   }
 
   .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
-    padding: 30px;
+    padding: 20px;
   }
 
   .card {
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
   }
 
   .card:hover {
-    transform: scale(1.03);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   }
 
   .card img {
     width: 100%;
+    height: 250px;
+    object-fit: cover; /* garante alinhamento bonito */
     display: block;
   }
 
   .card-title {
-    padding: 10px;
+    padding: 12px;
     background: #ff6600;
     color: white;
     text-align: center;
     font-weight: bold;
+    font-size: 16px;
   }
 
   /* Responsividade */
@@ -67,12 +72,26 @@
   @media (max-width: 768px) {
     .container {
       grid-template-columns: repeat(2, 1fr); 
+      gap: 15px;
+      padding: 15px;
+    }
+    .card img {
+      height: 200px;
     }
   }
 
   @media (max-width: 480px) {
     .container {
       grid-template-columns: 1fr; 
+      gap: 15px;
+      padding: 10px;
+    }
+    .card img {
+      height: 180px;
+    }
+    .card-title {
+      font-size: 14px;
+      padding: 10px;
     }
   }
 </style>
@@ -83,9 +102,7 @@
     <h1>Modelos de Currículo - Up Life</h1>
   </header>
 
-  <div class="container" id="cardsContainer">
-    <!-- Os cards serão adicionados aqui via JS -->
-  </div>
+  <div class="container" id="cardsContainer"></div>
 
   <script>
     const modelos = [
