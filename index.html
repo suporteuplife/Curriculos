@@ -7,103 +7,91 @@
   <link rel="icon" type="image/png" href="Logo_-removebg-preview.png">
   <style>
   body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f5f5f5;
-    color: #333;
-  }
-
-  header {
-    background: #e96d07;
-    color: white;
-    text-align: center;
-    padding: 15px;
-  }
-
-  h1 {
-    margin: 0;
-    font-size: clamp(20px, 5vw, 30px); 
-  }
-
-  .container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px;
-    padding: 20px;
-  }
-
-  .card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  }
-
-  .card img {
-  width: 100%;          /* ocupa toda a largura do card */
-  height: auto;         /* altura automática, proporcional */
-  object-fit: contain;  /* garante que não vai cortar nada */
-  background: #fff;     /* fundo branco, caso a imagem não preencha */
-  display: block;
-  margin: 0 auto;       /* centraliza se for menor que o card */
-  max-height: 90vh;     /* no celular, não deixa a imagem ultrapassar a tela */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+  color: #333;
 }
 
+header {
+  background: #e96d07;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
 
+h1 {
+  margin: 0;
+  font-size: clamp(20px, 5vw, 30px); 
+}
 
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.card img {
+  width: 100%;         /* ocupa toda a largura do card */
+  height: auto;        /* mantém proporção */
+  object-fit: contain; /* garante que não corta */
+  background: #fff;    /* fundo branco */
+  display: block;
+  margin: 0 auto;
+  max-height: 90vh;    /* no celular, nunca passa da altura da tela */
+}
+
+.card-title {
+  padding: 12px;
+  background: #ff6600;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    padding: 15px;
+  }
   .card-title {
+    font-size: 15px;
     padding: 12px;
-    background: #ff6600;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    font-size: 16px;
   }
+}
 
-  /* Responsividade */
-  @media (max-width: 1024px) {
-    .container {
-      grid-template-columns: repeat(3, 1fr); 
-    }
-  }
-
-  @media (max-width: 768px) {
-    .container {
-      grid-template-columns: repeat(2, 1fr); 
-      gap: 15px;
-      padding: 15px;
-    }
-    .card img {
-    height: 250px; 
-    object-fit: contain;
-    background: #fff;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .container {
-      grid-template-columns: 1fr; 
-      gap: 20px;
-      padding: 15px;
-    }
-     .card img {
-    height: 320px; 
-    object-fit: contain;
-    background: #fff;
-
-    }
-    .card-title {
-      font-size: 15px;
-      padding: 12px;
-    }
-  }
 </style>
 
 
