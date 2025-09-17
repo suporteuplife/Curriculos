@@ -51,49 +51,46 @@
     }
 
     .btn-whats {
-      display: inline-block;
-      padding: 16px 26px;
-      margin-top: 20px;
-      background: #25d366;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-      transition: background 0.2s, transform 0.2s;
-      font-size: 18px;
-    }
+  display: inline-block;
+  padding: 14px 22px;
+  margin-top: 20px;
+  background: #25d366;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: background 0.2s, transform 0.2s;
+  font-size: 18px;
+  text-align: center;
+}
 
-    .btn-whats:hover {
-      background: #1ebe5a;
-      transform: scale(1.03);
-    }
+.btn-whats:hover {
+  background: #1ebe5a;
+  transform: scale(1.03);
+}
 
-    /* Responsividade */
-    @media (max-width: 768px) {
-      .content {
-        padding: 15px;
-      }
-      .btn-whats {
-        display: block;
-        width: 100%;
-        max-width: 320px;
-        margin: 20px auto 0;
-        font-size: 16px;
-      }
-    }
+/* Responsividade */
+@media (max-width: 768px) {
+  .btn-whats {
+    display: block;
+    width: 90%;        
+    max-width: 320px; 
+    margin: 20px auto 0;
+    font-size: 16px;
+    padding: 12px 18px;
+  }
+}
 
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 22px;
-      }
-      h2 {
-        font-size: 18px;
-      }
-      .curriculo-img {
-        border-radius: 8px;
-      }
-    }
+@media (max-width: 480px) {
+  .btn-whats {
+    width: 100%;       
+    max-width: 280px;  
+    font-size: 15px;
+    padding: 10px 16px;
+  }
+}
+
   </style>
 </head>
 <body>
