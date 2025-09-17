@@ -47,12 +47,15 @@
   }
 
   .card img {
-  width: 100%; 
-  height: 280px;        /* altura padrão */
-  object-fit: contain;  /* mostra a imagem inteira */
-  background: #fff;     /* fundo branco para não ficar espaços transparentes */
+  width: 100%;          /* ocupa toda a largura do card */
+  height: auto;         /* altura automática, proporcional */
+  object-fit: contain;  /* garante que não vai cortar nada */
+  background: #fff;     /* fundo branco, caso a imagem não preencha */
   display: block;
+  margin: 0 auto;       /* centraliza se for menor que o card */
+  max-height: 90vh;     /* no celular, não deixa a imagem ultrapassar a tela */
 }
+
 
 
   .card-title {
@@ -94,7 +97,7 @@
     height: 320px; 
     object-fit: contain;
     background: #fff;
-    
+
     }
     .card-title {
       font-size: 15px;
