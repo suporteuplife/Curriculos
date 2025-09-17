@@ -47,11 +47,13 @@
   }
 
   .card img {
-    width: 100%; 
-    height: 280px; /* altura padrão maior */
-    object-fit: cover; /* mantém a proporção */
-    display: block;
-  }
+  width: 100%; 
+  height: 280px;        /* altura padrão */
+  object-fit: contain;  /* mostra a imagem inteira */
+  background: #fff;     /* fundo branco para não ficar espaços transparentes */
+  display: block;
+}
+
 
   .card-title {
     padding: 12px;
@@ -76,7 +78,9 @@
       padding: 15px;
     }
     .card img {
-      height: 250px; /* aumenta a altura no tablet/celular */
+    height: 250px; 
+    object-fit: contain;
+    background: #fff;
     }
   }
 
@@ -86,8 +90,11 @@
       gap: 20px;
       padding: 15px;
     }
-    .card img {
-      height: 320px; /* maior destaque no celular */
+     .card img {
+    height: 320px; 
+    object-fit: contain;
+    background: #fff;
+    
     }
     .card-title {
       font-size: 15px;
